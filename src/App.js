@@ -3,7 +3,7 @@ import dog01 from './dog01.png';
 import blackcat from './blackcat.png';
 //import './App.css';
 import './appindex.css';
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 
 //在 React 中，不建議直接使用 <script> 標籤來引入 JavaScript 文件。相反，您應該將 JavaScript 代碼放在 React 組件內部或使用 import 語句引入。
 //我建議將 indextest.js 文件中的內容轉移到 React 組件中。請將 indextest.js 的內容複製到您的 App.js 文件中，然後刪除 <script src="indextest.js"></script> 行。
@@ -12,8 +12,6 @@ function App() {
   // 將 indextest.js 的內容放在這裡
   // Random number
   const [targetNumber, settargetNumber] = useState(Math.floor(Math.random() * 100) + 1);
-
-  console.log(targetNumber);
 
     // 定義一個函數，當需要生成新的隨機數時調用
     const newTargetnumber = () => {
@@ -57,6 +55,9 @@ const handleguessText = (event) => {
     setanswerButton(true);
   };
 
+  useEffect(() => {
+    console.log(targetNumber);
+  }, [targetNumber]);
 
 
   return (
